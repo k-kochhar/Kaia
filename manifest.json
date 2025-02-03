@@ -1,11 +1,14 @@
 {
-  "name": "News Insight Analyzer",
-  "description": "Analyzes articles for emotional tone, bias, and manipulation techniques.",
+  "name": "Kaia - Bias Analyzer",
+  "description": "Automatically analyzes webpages for potential bias using Google's Gemini AI model",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
     "activeTab",
-    "scripting"
+    "storage"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
   ],
   "action": {
     "default_popup": "popup.html"

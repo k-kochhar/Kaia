@@ -1,49 +1,68 @@
-# News Bias Analyzer
+# Kaia - Chrome Extension  
 
-A Chrome extension that automatically detects and highlights potential bias in news articles using Google's Gemini AI.
+A Chrome extension that analyzes webpage content for potential bias using **Google's Gemini AI**, providing a **summary, bias assessment, and a bias score** 
 
-## Setup
+<img width="1920" alt="Screenshot 2025-02-03 at 5 15 34 PM" src="https://github.com/user-attachments/assets/a0565bf4-aa38-4313-b30e-73fd9e0a1de6" />
 
-1. Clone the repository
-```bash
-git clone https://github.com/your-username/news-bias-analyzer.git
-cd news-bias-analyzer
+## Features  
+
+- **Automatic Bias Detection**: Summarizes the webpage and highlights potential biases.  
+- **Bias Score (1-10)**: Rates how biased a page is (10 being extremely biased).  
+- **Lightweight & Fast**: Runs in your browser’s popup window.  
+
+---  
+
+## Installation  
+
+### 1. Clone or Download This Repository  
+
+```sh  
+git clone https://github.com/[your-username]/Kaia.git  
+cd Kaia 
 ```
 
-2. Install dependencies
-```bash
-npm install
+### 2. Add the Extension to Chrome  
+
+1. Open **Google Chrome**.  
+2. Navigate to `chrome://extensions/`.  
+3. Enable **Developer Mode** (toggle in the top right).  
+4. Click **"Load Unpacked"** and select the project folder.  
+
+---  
+
+## API Key Setup  
+
+This extension uses **Google's Gemini AI** for bias detection. To use it, you need to set up an API key:  
+
+1. Go to [Google AI API Console](https://console.cloud.google.com/) and create a new API key.  
+2. Open `popup.js` and replace:  
+
+```js  
+const API_KEY = "";
 ```
 
-3. Set up your environment variables
-```bash
-cp .env.example .env
-```
-Then edit `.env` and add your Gemini API key. You can get one from the [Google AI Studio](https://makersuite.google.com/app/apikey).
+with your actual API key:  
 
-4. Build the extension
-```bash
-npm run build
+```js  
+const API_KEY = "your-api-key-here";  
 ```
 
-5. Load the extension in Chrome
-- Open Chrome and go to `chrome://extensions/`
-- Enable "Developer mode"
-- Click "Load unpacked"
-- Select the extension directory
+---  
 
-## Security Note
+## How to Use  
 
-Never commit your `.env` file or expose your API key. If you accidentally expose your API key:
-1. Immediately revoke it from the Google Cloud Console
-2. Generate a new key
-3. Update your `.env` file with the new key
+1. Open **any webpage** that you want to analyze.  
+2. Click on the **extension icon** in the Chrome toolbar.  
+3. The extension will automatically:  
+   - Fetch the webpage content  
+   - Send it to the Gemini API  
+   - Display a **summary, bias analysis, and bias score** in a popup.  
 
-## Usage
+---  
 
-The extension will automatically:
-1. Detect when you're on a news article
-2. Analyze the content for potential bias
-3. Highlight biased phrases with explanations on hover
+## Technologies Used  
 
-No configuration needed - just browse news sites as normal and the extension will work automatically. 
+- **JavaScript** (Popup & Background Scripts)  
+- **Chrome Extensions API** (Tab Content Extraction)  
+- **Google Gemini AI** (Bias Detection & Analysis)  
+- **HTML & CSS** (Popup UI)  

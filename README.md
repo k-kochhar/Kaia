@@ -17,7 +17,7 @@ A Chrome extension that analyzes webpage content for potential bias using **Goog
 ### 1. Clone or Download This Repository  
 
 ```sh  
-git clone https://github.com/[your-username]/Kaia.git  
+git clone https://github.com/k-kochhar/Kaia.git  
 cd Kaia 
 ```
 
